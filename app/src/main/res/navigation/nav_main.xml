@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/athleteHomeFragment">
+
+    <!-- ================= ATHLETE ================= -->
+
+    <fragment
+        android:id="@+id/athleteHomeFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthleteHomeFragment"
+        android:label="Главная">
+        <action
+            android:id="@+id/action_athleteHome_to_plans"
+            app:destination="@id/athletePlansFragment" />
+        <action
+            android:id="@+id/action_athleteHome_to_stats"
+            app:destination="@id/athleteStatsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/athletePlansFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthletePlansFragment"
+        android:label="Мои тренировки">
+        <action
+            android:id="@+id/action_plans_to_details"
+            app:destination="@id/athletePlanDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/athletePlanDetailsFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthletePlanDetailsFragment"
+        android:label="План тренировки">
+
+        <!-- 🔴 ВАЖНО: имя planId -->
+        <argument
+            android:name="planId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/athleteStatsFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthleteStatsFragment"
+        android:label="Статистика" />
+
+    <!-- ================= TRAINER ================= -->
+
+    <fragment
+        android:id="@+id/trainerHomeFragment"
+        android:name="com.example.fitplanner.ui.trainer.TrainerHomeFragment"
+        android:label="Тренер · Главная">
+        <action
+            android:id="@+id/action_trainerHome_to_plans"
+            app:destination="@id/trainerPlansFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trainerPlansFragment"
+        android:name="com.example.fitplanner.ui.trainer.TrainerPlansFragment"
+        android:label="Планы тренировок" />
+
+    <!-- ================= ADMIN (если нужен) ================= -->
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.fitplanner.ui.admin.AdminAssignFragment"
+        android:label="Админ" />
+
+</navigation>

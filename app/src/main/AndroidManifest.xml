@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fitplanner">
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/Theme.FitPlanner">
+
+        <!-- Стартовое окно -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Экран регистрации ролей -->
+        <activity
+            android:name=".ui.auth.ChooseRoleActivity"
+            android:exported="false" />
+
+        <!-- Регистрация атлета -->
+        <activity
+            android:name=".ui.auth.RegisterAthleteActivity"
+            android:exported="false" />
+
+        <!-- Регистрация тренера -->
+        <activity
+            android:name=".ui.auth.RegisterTrainerActivity"
+            android:exported="false" />
+
+        <!-- Основной экран атлета -->
+        <activity
+            android:name=".ui.athlete.AthleteMainActivity"
+            android:exported="false" />
+
+        <!-- Основной экран тренера -->
+        <activity
+            android:name=".ui.trainer.TrainerMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.AdminMainActivity"
+            android:exported="false" />
+
+    </application>
+</manifest>

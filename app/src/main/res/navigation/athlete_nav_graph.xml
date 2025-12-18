@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/athlete_nav_graph"
+    app:startDestination="@id/athleteHomeFragment">
+
+    <!-- 🏠 ГЛАВНАЯ -->
+    <fragment
+        android:id="@+id/athleteHomeFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthleteHomeFragment"
+        android:label="Главная" />
+
+    <!-- 📋 ПЛАНЫ -->
+    <fragment
+        android:id="@+id/athletePlansFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthletePlansFragment"
+        android:label="Планы">
+
+        <action
+            android:id="@+id/action_to_planDetails"
+            app:destination="@id/athletePlanDetailsFragment" />
+    </fragment>
+
+    <!-- 📊 СТАТИСТИКА -->
+    <fragment
+        android:id="@+id/athleteStatsFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthleteStatsFragment"
+        android:label="Статистика" />
+
+    <!-- 🏋️ ДЕТАЛИ ТРЕНИРОВКИ -->
+    <fragment
+        android:id="@+id/athletePlanDetailsFragment"
+        android:name="com.example.fitplanner.ui.athlete.AthletePlanDetailsFragment"
+        android:label="Тренировка">
+
+        <argument
+            android:name="planId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
